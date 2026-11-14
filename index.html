@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="AUTOHUB — автосервис в Котельниках. ТО, диагностика, ремонт двигателя, тормозов, подвески и автоэлектрика. Запись на ремонт.">
+  <title>AUTOHUB — автосервис в Котельниках</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--gold:#ffbd22;--gold2:#ffdf78;--bg:#080808;--panel:#111;--muted:#b8b8b8;--line:rgba(255,190,40,.38)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#fff;font-family:Montserrat,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+    .topline{height:4px;background:linear-gradient(90deg,transparent,var(--gold),#fff,var(--gold),transparent)}
+    header{position:sticky;top:0;z-index:10;background:rgba(5,5,5,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-size:28px;font-weight:900;letter-spacing:-1.5px}.brand span{color:var(--gold)}
+    .navlinks{display:flex;gap:25px;color:#ddd;font-size:12px;font-weight:700;text-transform:uppercase}.navlinks a:hover{color:var(--gold)}
+    .navcall{border:1px solid var(--gold);padding:12px 17px;border-radius:4px;font-weight:800;font-size:13px;color:var(--gold)}
+    .hero{position:relative;overflow:hidden;min-height:590px;display:flex;align-items:center;border-bottom:1px solid var(--line);background:
+      linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.86) 50%,rgba(0,0,0,.55) 100%),
+      url('autohub-banner-reference.png') center/cover no-repeat}
+    .hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 35%,rgba(255,190,30,.08),transparent 65%)}
+    .hero-content{position:relative;z-index:1;padding:75px 0;max-width:720px}
+    .eyebrow{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:4px;text-transform:uppercase}
+    h1{font-size:clamp(44px,7vw,82px);line-height:.98;margin:18px 0 20px;font-weight:900;letter-spacing:-3px}
+    h1 span{color:var(--gold);text-shadow:0 0 28px rgba(255,184,0,.2)}
+    .hero p{font-size:clamp(16px,2vw,20px);line-height:1.65;color:#ddd;max-width:590px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;padding:16px 23px;border-radius:4px;font-weight:900;text-transform:uppercase;font-size:12px;letter-spacing:1px;transition:.2s;cursor:pointer}
+    .btn-gold{background:linear-gradient(120deg,#ffdf78,#f5a900);color:#111;box-shadow:0 7px 25px rgba(255,183,0,.2);border:0}
+    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,183,0,.35)}
+    .btn-outline{border:1px solid rgba(255,255,255,.5);color:#fff}.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+    .trust{display:flex;gap:28px;flex-wrap:wrap;margin-top:38px;color:#ddd;font-size:12px;font-weight:700}.trust b{color:var(--gold);font-size:18px;margin-right:7px}
+    section{padding:82px 0}.section-head{text-align:center;margin-bottom:42px}.section-head .eyebrow{letter-spacing:3px}
+    h2{font-size:clamp(30px,4vw,46px);margin:12px 0;font-weight:900;letter-spacing:-1.5px}.section-head p{color:var(--muted);max-width:650px;margin:0 auto;line-height:1.7;font-size:14px}
+    .services{background:linear-gradient(180deg,#0a0a0a,#111 50%,#090909)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .service{background:linear-gradient(145deg,#171717,#0c0c0c);border:1px solid rgba(255,255,255,.09);padding:27px 24px;min-height:190px;position:relative;overflow:hidden;transition:.25s}
+    .service:before{content:"";position:absolute;left:0;top:0;width:3px;height:100%;background:var(--gold);transform:scaleY(0);transition:.25s}
+    .service:hover{border-color:var(--line);transform:translateY(-4px)}.service:hover:before{transform:scaleY(1)}
+    .icon{font-size:32px;color:var(--gold);margin-bottom:16px}.service h3{font-size:17px;margin:0 0 10px}.service p{font-size:13px;line-height:1.6;color:var(--muted);margin:0}
+    .service a{display:inline-block;color:var(--gold);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-top:18px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+    .about-card{border:1px solid var(--line);padding:32px;background:radial-gradient(circle at top right,rgba(255,190,30,.12),transparent 45%),#101010}
+    .about-card strong{font-size:42px;color:var(--gold);display:block}.about-card span{color:#ccc;font-size:13px}
+    .checks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:25px}.checks div{font-size:13px;color:#ddd}.checks b{color:var(--gold);margin-right:8px}
+    .booking{background:linear-gradient(120deg,#15120a,#090909 60%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .booking-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:start}
+    .booking-info p{color:#c8c8c8;line-height:1.7;font-size:14px}.contact-line{margin:22px 0;font-weight:800}.contact-line small{display:block;color:var(--gold);font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+    form{background:#101010;border:1px solid var(--line);padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{font-size:11px;color:#ccc;font-weight:700;display:block;margin-bottom:7px}
+    input,select,textarea{width:100%;background:#080808;border:1px solid #383838;color:#fff;padding:14px;font:inherit;font-size:13px;border-radius:3px;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--gold)}textarea{min-height:90px;resize:vertical}.full{grid-column:1/-1}
+    .form-note{font-size:10px;color:#888;line-height:1.5}.form-status{grid-column:1/-1;font-size:13px;line-height:1.5}
+    .contacts{display:grid;grid-template-columns:1fr 1fr;gap:18px}.contact-box{background:#111;border:1px solid #292929;padding:25px}.contact-box small{color:var(--gold);letter-spacing:2px;font-weight:900;font-size:10px}.contact-box h3{font-size:18px;margin:12px 0 7px}.contact-box p{font-size:13px;color:#bbb;line-height:1.6;margin:0}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:#888;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .float-call{position:fixed;right:20px;bottom:20px;z-index:9;background:var(--gold);color:#111;border-radius:50px;padding:15px 20px;font-weight:900;font-size:12px;box-shadow:0 5px 25px #000}
+    @media(max-width:800px){.navlinks{display:none}.hero{min-height:570px;background-position:60% center}.grid{grid-template-columns:repeat(2,1fr)}.about-grid,.booking-layout{grid-template-columns:1fr}.about-grid{gap:25px}.booking-layout{gap:25px}}
+    @media(max-width:540px){.nav{height:65px}.brand{font-size:24px}.navcall{padding:10px 11px;font-size:11px}.hero-content{padding:65px 0}.hero{min-height:590px}h1{letter-spacing:-2px}.grid,.contacts{grid-template-columns:1fr}.service{min-height:160px}section{padding:62px 0}form{padding:18px;grid-template-columns:1fr}.full{grid-column:auto}.checks{grid-template-columns:1fr}.trust{gap:14px}.float-call{right:12px;bottom:12px}}
+  </style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">AUTO<span>HUB</span></a>
+    <nav class="navlinks"><a href="#services">Услуги</a><a href="#about">О сервисе</a><a href="#booking">Запись</a><a href="#contacts">Контакты</a></nav>
+    <a class="navcall" href="tel:+79777625457">8 (977) 762-5457</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="eyebrow">AUTOHUB · CAR SERVICE</div>
+        <h1>ВАШ АВТОМОБИЛЬ.<br><span>НАШ СТАНДАРТ.</span></h1>
+        <p>Профессиональное обслуживание и ремонт автомобилей. Внимание к деталям, понятный подход и забота о вашем автомобиле.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#booking">Записаться на ремонт</a>
+          <a class="btn btn-outline" href="tel:+79777625457">Позвонить в сервис</a>
+        </div>
+        <div class="trust"><span><b>✓</b> Понятная консультация</span><span><b>✓</b> Согласование работ</span><span><b>✓</b> Удобная запись</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Чем поможем</div><h2>Услуги автосервиса</h2><p>От планового обслуживания до поиска и устранения неисправностей. Выберите услугу — и оставьте заявку на удобное время.</p></div>
+      <div class="grid">
+        <article class="service"><div class="icon">⚙</div><h3>ТО и диагностика</h3><p>Плановое техническое обслуживание и проверка основных систем автомобиля.</p><a href="#booking" data-service="ТО и диагностика">Записаться →</a></article>
+        <article class="service"><div class="icon">⌁</div><h3>Ремонт двигателя</h3><p>Диагностика неисправностей двигателя и ремонт по согласованию.</p><a href="#booking" data-service="Ремонт двигателя">Записаться →</a></article>
+        <article class="service"><div class="icon">◉</div><h3>Тормозная система</h3><p>Проверка и ремонт тормозной системы, обслуживание её компонентов.</p><a href="#booking" data-service="Ремонт тормозной системы">Записаться →</a></article>
+        <article class="service"><div class="icon">◒</div><h3>Замена масла и фильтров</h3><p>Замена моторного масла и фильтров для регулярного обслуживания.</p><a href="#booking" data-service="Замена масла и фильтров">Записаться →</a></article>
+        <article class="service"><div class="icon">ϟ</div><h3>Автоэлектрика</h3><p>Поиск электрических неисправностей и диагностика оборудования.</p><a href="#booking" data-service="Автоэлектрика">Записаться →</a></article>
+        <article class="service"><div class="icon">⛭</div><h3>Ремонт подвески</h3><p>Проверка ходовой части и ремонт элементов подвески.</p><a href="#booking" data-service="Ремонт подвески">Записаться →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div><div class="eyebrow">AUTOHUB CAR SERVICE</div><h2>Сервис, которому доверяют автомобиль</h2><p style="color:#bbb;line-height:1.8;font-size:14px">Начинаем с обращения и уточнения задачи, затем согласовываем необходимые работы. Вы понимаете, что требуется автомобилю, и можете выбрать удобное время для визита.</p>
+        <div class="checks"><div><b>✓</b> Запись заранее</div><div><b>✓</b> Согласование работ</div><div><b>✓</b> Диагностика</div><div><b>✓</b> Связь с мастером</div></div>
+      </div>
+      <div class="about-card"><strong>ВАШ АВТОМОБИЛЬ</strong><span>НАШ СТАНДАРТ КАЧЕСТВА</span><hr style="border:0;border-top:1px solid #493a19;margin:25px 0"><p style="color:#ccc;line-height:1.7;font-size:13px">Оставьте заявку на сайте или позвоните нам. Администратор свяжется с вами, уточнит детали и подтвердит время записи.</p><a class="btn btn-gold" href="#booking">Оставить заявку</a></div>
+    </div>
+  </section>
+
+  <section class="booking" id="booking">
+    <div class="wrap booking-layout">
+      <div class="booking-info"><div class="eyebrow">Онлайн-запись</div><h2>Запишитесь на ремонт</h2><p>Заполните форму — заявка поступит администратору в Telegram. Мы свяжемся с вами, чтобы подтвердить дату и время.</p>
+        <div class="contact-line"><small>Телефон для связи</small><a href="tel:+79777625457">8 (977) 762-5457</a></div>
+        <div class="contact-line"><small>Адрес автосервиса</small>Котельники, мкр. Силикат, 25</div>
+      </div>
+      <form id="bookingForm">
+        <div><label for="name">Ваше имя *</label><input id="name" name="name" placeholder="Как к вам обращаться" required></div>
+        <div><label for="phone">Телефон *</label><input id="phone" name="phone" type="tel" placeholder="+7 ___ ___-__-__" required></div>
+        <div><label for="service">Какая услуга нужна *</label><select id="service" name="service" required><option value="">Выберите услугу</option><option>ТО и диагностика</option><option>Ремонт двигателя</option><option>Ремонт тормозной системы</option><option>Замена масла и фильтров</option><option>Автоэлектрика</option><option>Ремонт подвески</option><option>Другая неисправность</option></select></div>
+        <div><label for="car">Марка и модель автомобиля</label><input id="car" name="car" placeholder="Например, Ford Focus"></div>
+        <div><label for="date">Желаемая дата</label><input id="date" name="preferredDate" type="date"></div>
+        <div><label for="time">Удобное время</label><select id="time" name="preferredTime"><option value="">Не важно</option><option>09:00–11:00</option><option>11:00–13:00</option><option>13:00–15:00</option><option>15:00–17:00</option><option>17:00–19:00</option></select></div>
+        <div class="full"><label for="comment">Комментарий</label><textarea id="comment" name="comment" placeholder="Опишите проблему или дополнительные пожелания"></textarea></div>
+        <div class="full"><button class="btn btn-gold" type="submit" style="width:100%">Отправить заявку</button></div>
+        <div class="form-note full">Нажимая кнопку, вы соглашаетесь на обработку указанных данных для ответа на заявку. Отправка формы не означает автоматического подтверждения записи.</div>
+        <div class="form-status" id="formStatus" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Мы рядом</div><h2>Контакты AUTOHUB</h2></div>
+      <div class="contacts">
+        <div class="contact-box"><small>ПОЗВОНИТЬ</small><h3><a href="tel:+79777625457">8 (977) 762-5457</a></h3><p>Позвоните, чтобы уточнить услугу и договориться о визите.</p></div>
+        <div class="contact-box"><small>ПРИЕЗЖАЙТЕ</small><h3>Котельники, мкр. Силикат, 25</h3><p>Постройте маршрут до автосервиса и приезжайте в согласованное время.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> AUTOHUB CAR SERVICE</span><span>Ваш автомобиль. Наш стандарт.</span><a href="tel:+79777625457">8 (977) 762-5457</a></div></footer>
+<a class="float-call" href="tel:+79777625457">☎ Позвонить</a>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.querySelectorAll("[data-service]").forEach(link => {
+    link.addEventListener("click", () => {
+      document.getElementById("service").value = link.dataset.service;
+    });
+  });
+  const dateInput = document.getElementById("date");
+  const today = new Date();
+  dateInput.min = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0,10);
+
+  document.getElementById("bookingForm").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const status = document.getElementById("formStatus");
+    const button = form.querySelector("button[type=submit]");
+    const data = Object.fromEntries(new FormData(form).entries());
+    button.disabled = true;
+    button.textContent = "Отправляем...";
+    status.textContent = "";
+    status.style.color = "#ffdf78";
+    try {
+      const response = await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+      const result = await response.json();
+      if (!response.ok || !result.ok) throw new Error(result.message || "Не удалось отправить заявку.");
+      status.textContent = result.message;
+      status.style.color = "#9be7a4";
+      form.reset();
+    } catch (error) {
+      status.textContent = error.message || "Ошибка отправки. Позвоните нам: 8 (977) 762-5457.";
+      status.style.color = "#ff9c7d";
+    } finally {
+      button.disabled = false;
+      button.textContent = "Отправить заявку";
+    }
+  });
+</script>
+</body>
+</html>
